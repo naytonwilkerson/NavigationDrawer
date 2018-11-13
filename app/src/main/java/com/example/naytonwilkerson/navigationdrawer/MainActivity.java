@@ -1,5 +1,6 @@
 package com.example.naytonwilkerson.navigationdrawer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -9,7 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
 
     private DrawerLayout dl;
     private ActionBarDrawerToggle t;
@@ -20,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dl = (DrawerLayout) findViewById(R.id.activity_main);
+        dl = findViewById(R.id.activity_main);
         t = new ActionBarDrawerToggle(this, dl, R.string.abrir, R.string.fechar);
 
         dl.addDrawerListener(t);
@@ -28,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        nv = (NavigationView) findViewById(R.id.nv);
+        nv = findViewById(R.id.nv);
         nv.setNavigationItemSelectedListener(this);
     }
 
@@ -40,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return super.onOptionsItemSelected(item);
     }
 
-    // Responde a eventos do menu da gaveta de navegação
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
@@ -54,9 +57,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.carrinho:
                 Toast.makeText(MainActivity.this, "Meu carrinho de compras", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.alunos:
+                Intent intent = new Intent (MainActivity.this, ActivityPadrao.class);
+                startActivity(intent);
+                break;
             default:
                 return true;
         }
         return false;
     }
 }
+
+

@@ -11,7 +11,11 @@
         android:title="Configurações" />
     <item
         android:id="@+id/carrinho"
-        android:icon="@drawable/ic_local_groceryy_store_black_24dp"
+        android:icon="@drawable/ic_local_grocery_store_black_24dp"
         android:title="Meu Carrinho" />
+    <item
+        android:id="@+id/alunos"
+        android:icon="@drawable/ic_local_grocery_store_black_24dp"
+        android:title="Alunos" />
 
 </menu>
